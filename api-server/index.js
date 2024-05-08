@@ -4,8 +4,11 @@ const { ECSClient, RunTaskCommand } = require('@aws-sdk/client-ecs')
 const { Server } = require('socket.io')
 const cors = require('cors');
 // const Redis = require('ioredis')
+require('dotenv').config()
 
-const app = express(cors())
+const app = express(cors({
+    origin: '*'
+}))
 const PORT = 9000
 
 // const subscriber = new Redis('cloudbilder-logs-tdazum.serverless.use1.cache.amazonaws.com:6379')
@@ -37,6 +40,7 @@ const config = {
 app.use(express.json())
 
 app.post('/project', async (req, res) => {
+    console.log('Creating project...')
     const { gitURL, slug } = req.body
     const projectSlug = slug ? slug : generateSlug()
 
