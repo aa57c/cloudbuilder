@@ -6,14 +6,12 @@ const cors = require('cors');
 // const Redis = require('ioredis')
 require('dotenv').config()
 
-const app = express(cors({
-    origin: '*'
-}))
+const app = express(cors({}))
 const PORT = 3000
 
 // const subscriber = new Redis('cloudbilder-logs-tdazum.serverless.use1.cache.amazonaws.com:6379')
 
-const io = new Server({ cors: '*' })
+const io = new Server({})
 
 io.on('connection', socket => {
     socket.on('subscribe', channel => {
@@ -38,6 +36,12 @@ const config = {
 }
 
 app.use(express.json())
+
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "http://cloudbuilder.vercel.app/");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
 
 app.post('/project', async (req, res) => {
     console.log('Creating project...')
