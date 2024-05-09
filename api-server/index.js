@@ -43,6 +43,10 @@ app.use(function(req, res, next) {
     next();
   });
 
+app.get('/', (req, res) => {
+    return res.send('Cloud Builder API')
+})
+
 app.post('/project', async (req, res) => {
     console.log('Creating project...')
     const { gitURL, slug } = req.body
