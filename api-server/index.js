@@ -38,7 +38,7 @@ const config = {
 app.use(express.json())
 
 app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "http://cloudbuilder.vercel.app/");
+    res.header("Access-Control-Allow-Origin", "https://cloudbuilder.vercel.app/");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
   });
