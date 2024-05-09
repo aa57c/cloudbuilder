@@ -9,7 +9,7 @@ require('dotenv').config()
 const app = express(cors({}))
 const PORT = process.env.PORT || 8000
 
-const subscriber = new Redis('redis://redis-14398.c258.us-east-1-4.ec2.redns.redis-cloud.com:14398')
+const subscriber = new Redis('redis://default:2XoGp9D6EJWL34lh9OQoaBantLSC58SL@redis-14398.c258.us-east-1-4.ec2.redns.redis-cloud.com:14398')
 
 const io = new Server({})
 
