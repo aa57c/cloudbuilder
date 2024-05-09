@@ -7,8 +7,6 @@ import { Github } from "lucide-react";
 import { Fira_Code } from "next/font/google";
 import axios from "axios";
 
-const serverURL = 
-
 const socket = io("https://cloudbuilder.onrender.com:9002");
 
 const firaCode = Fira_Code({ subsets: ["latin"] });
