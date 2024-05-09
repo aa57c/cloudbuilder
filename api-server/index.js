@@ -93,6 +93,6 @@ async function initRedisSubscribe() {
 }
 
 
-// initRedisSubscribe()
+initRedisSubscribe()
 
 app.listen(PORT, () => console.log(`API Server Running..${PORT}`))
