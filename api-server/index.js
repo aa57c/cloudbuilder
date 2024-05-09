@@ -7,7 +7,7 @@ const cors = require('cors');
 require('dotenv').config()
 
 const app = express(cors({}))
-const PORT = 3000
+const PORT = process.env.PORT || 3000
 
 // const subscriber = new Redis('cloudbilder-logs-tdazum.serverless.use1.cache.amazonaws.com:6379')
 
