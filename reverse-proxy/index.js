@@ -10,13 +10,9 @@ const proxy = httpProxy.createProxy()
 
 app.use((req, res) => {
     const pathSegments = req.path.split('/')
-    const subdomain = req.path
+    const subdomain = pathSegments.length > 1 ? pathSegments[1] : ''
 
-    const resolvesTo = `${BASE_PATH}${subdomain}`
-
-    console.log(`Requesting ${req.path}`)
-    console.log(`Subdomain: ${subdomain}`)
-    console.log(`Proxying to ${resolvesTo}`)
+    const resolvesTo = `${BASE_PATH}/${subdomain}`
 
     return proxy.web(req, res, { target: resolvesTo, changeOrigin: true })
 })
