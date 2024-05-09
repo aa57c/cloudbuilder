@@ -6,7 +6,7 @@ const mime = require('mime-types')
 const Redis = require('ioredis')
 
 
-const publisher = new Redis('redis-14398.c258.us-east-1-4.ec2.redns.redis-cloud.com:14398')
+const publisher = new Redis('redis://redis-14398.c258.us-east-1-4.ec2.redns.redis-cloud.com:14398')
 
 
 const s3Client = new S3Client({
