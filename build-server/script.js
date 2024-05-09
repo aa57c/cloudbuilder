@@ -3,10 +3,10 @@ const path = require('path')
 const fs = require('fs')
 const { S3Client, PutObjectCommand } = require('@aws-sdk/client-s3')
 const mime = require('mime-types')
-const Redis = require('ioredis')
+// const Redis = require('ioredis')
 
 
-const publisher = new Redis('redis://default:2XoGp9D6EJWL34lh9OQoaBantLSC58SL@redis-14398.c258.us-east-1-4.ec2.redns.redis-cloud.com:14398')
+// const publisher = new Redis('redis://default:2XoGp9D6EJWL34lh9OQoaBantLSC58SL@redis-14398.c258.us-east-1-4.ec2.redns.redis-cloud.com:14398')
 
 
 const s3Client = new S3Client({
@@ -22,7 +22,7 @@ const PROJECT_ID = process.env.PROJECT_ID
 
 function publishLog(log) {
     console.log(log)
-    publisher.publish(`logs:${PROJECT_ID}`, JSON.stringify({ log }))
+    // publisher.publish(`logs:${PROJECT_ID}`, JSON.stringify({ log }))
 }
 
 async function init() {
