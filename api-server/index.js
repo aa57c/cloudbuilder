@@ -3,13 +3,13 @@ const { generateSlug } = require('random-word-slugs')
 const { ECSClient, RunTaskCommand } = require('@aws-sdk/client-ecs')
 const { Server } = require('socket.io')
 const cors = require('cors');
-// const Redis = require('ioredis')
+const Redis = require('ioredis')
 require('dotenv').config()
 
 const app = express(cors({}))
 const PORT = process.env.PORT || 8000
 
-// const subscriber = new Redis('cloudbilder-logs-tdazum.serverless.use1.cache.amazonaws.com:6379')
+const subscriber = new Redis('redis-14398.c258.us-east-1-4.ec2.redns.redis-cloud.com:14398')
 
 const io = new Server({})
 
