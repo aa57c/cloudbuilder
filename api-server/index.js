@@ -7,7 +7,7 @@ const cors = require('cors');
 require('dotenv').config()
 
 const app = express(cors({}))
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 8000
 
 // const subscriber = new Redis('cloudbilder-logs-tdazum.serverless.use1.cache.amazonaws.com:6379')
 
@@ -80,7 +80,7 @@ app.post('/project', async (req, res) => {
 
     await ecsClient.send(command);
 
-    return res.json({ status: 'queued', data: { projectSlug, url: `http://${projectSlug}.localhost:8000` } })
+    return res.json({ status: 'queued', data: { projectSlug, url: `http://${projectSlug}.localhost:9000` } })
 
 })
 
