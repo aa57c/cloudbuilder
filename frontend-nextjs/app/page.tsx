@@ -36,7 +36,7 @@ export default function Home() {
   const handleClickDeploy = useCallback(async () => {
     setLoading(true);
 
-    const { data } = await axios.post(`http://localhost:9000/project`, {
+    const { data } = await axios.post(`http://cloudbuilder.onrender.com/project`, {
       gitURL: repoURL,
       slug: projectId,
     });
