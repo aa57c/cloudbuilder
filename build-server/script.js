@@ -4,6 +4,8 @@ const fs = require('fs')
 const { S3Client, PutObjectCommand } = require('@aws-sdk/client-s3')
 const mime = require('mime-types')
 // const Redis = require('ioredis')
+require('dotenv').config()
+
 
 
 // const publisher = new Redis('redis://default:2XoGp9D6EJWL34lh9OQoaBantLSC58SL@redis-14398.c258.us-east-1-4.ec2.redns.redis-cloud.com:14398')
